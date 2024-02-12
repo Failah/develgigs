@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ListingController;
-use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 // stick this to the end as last Route or laravel can get confused
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
+
+// USERS ROUTES
+
+Route::get('/register', [UserController::class, 'create']);
