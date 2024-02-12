@@ -10,7 +10,7 @@
                     >
                         <img
                             class="mr-6 mb-6"
-                            src="{{ 'https://picsum.photos/300/400?random=' . $listing->id}}"
+                            src="{{$listing->logo ? asset('storage/' . $listing->logo) : 'https://picsum.photos/200/300?random=' . $listing->id}}"
                             alt=""
                         />
 
@@ -47,6 +47,12 @@
                             </div>
                         </div>
                     </div>
+                </x-card>
+
+                <x-card class="mt-4 p-2 flex space-x-6">
+                    <a href="/listings/{{$listing->id}}/edit">
+                        <i class="fa-solid fa-pencil"></i> Edit
+                    </a>
                 </x-card>
             </div>
 @endsection
